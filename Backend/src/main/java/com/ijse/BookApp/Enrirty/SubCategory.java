@@ -1,36 +1,41 @@
-package com.ijse.BookApp.Entity;
-
-
+package com.ijse.bookstore.Enrirty;
 
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name ="categares")
+@Table(name ="subcategares")
 @Data
 
-public class Category {
+public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long  id;
     @Column(nullable = false)
-    private String cname;
+    private String sbname;
 
      @Column(nullable = false)
-    private String cdescription;
+    private String sbdescription;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @OneToMany(mappedBy = "subcategory", cascade = CascadeType.ALL)
     private List<Book> books;
-
 
   
 

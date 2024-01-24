@@ -1,4 +1,4 @@
-package com.ijse.BookApp.controler;
+package com.ijse.bookstore.Controler;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ijse.BookApp.Entity.Book;
-import com.ijse.BookApp.Service.BookService;
+import com.ijse.bookstore.Enrirty.Book;
+import com.ijse.bookstore.Service.BookService;
+
 
 @RestController
 @CrossOrigin
@@ -52,6 +54,8 @@ public class BookControler {
     @PostMapping("/books")
     public ResponseEntity<Book>creatBook(@RequestBody Book book  ){
         try {
+            System.out.println(book);
+
             Book newBook =bookService.creatBook(book);
             return ResponseEntity.status(HttpStatus.CREATED).body(newBook);
             
@@ -88,6 +92,12 @@ public class BookControler {
     }
 
 
+
+    // @GetMapping
+    // public ResponseEntity<List<Book>> getBooksByCategory(@RequestParam String category) {
+    //     List<Book> books = bookService.getBooksByCategory(category);
+    //     return new ResponseEntity<>(books, HttpStatus.OK);
+    // }
 
 
 

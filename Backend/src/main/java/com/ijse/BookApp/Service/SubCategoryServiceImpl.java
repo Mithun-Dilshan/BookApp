@@ -1,4 +1,4 @@
-package com.ijse.BookApp.Service;
+package com.ijse.bookstore.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -6,20 +6,24 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ijse.BookApp.Entity.SubCategory;
-import com.ijse.BookApp.Repositary.SubCategoryRepositary;
+import com.ijse.bookstore.Enrirty.SubCategory;
+import com.ijse.bookstore.Repositary.SubCategoryRepositary;
+
+
 
 
 @Service
 public class SubCategoryServiceImpl implements SubCategoryService {
     private SubCategoryRepositary subcategoryRepositary;
 
-      @Autowired
-    public SubCategoryServiceImpl(SubCategoryRepositary subcategaresRepositary){
+    @Autowired
+    public SubCategoryServiceImpl(SubCategoryRepositary subcategoryRepositary) {
         this.subcategoryRepositary = subcategoryRepositary;
-
-
     }
+    
+
+
+    
 
     @Override
     public List<SubCategory> getAllSubCategory() {

@@ -1,10 +1,12 @@
-package com.ijse.BookApp.Service;
+package com.ijse.bookstore.Service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ijse.BookApp.Entity.SubCategory;
+import com.ijse.bookstore.Enrirty.SubCategory;
+
+
 
 @Service
 

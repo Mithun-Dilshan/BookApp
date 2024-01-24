@@ -1,4 +1,4 @@
-package com.ijse.BookApp.Entity;
+package com.ijse.bookstore.Enrirty;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
@@ -37,13 +37,26 @@ public class Book {
     @Column(nullable = false)
     private String description;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "category_id") 
+    @Column
+    private String Category;
+
+    @Column
+    private String Subcategory;
+    
+     @Column
+     private String image; 
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "subcategory_id") 
+    @ManyToOne
+    @JoinColumn(name = "subcategory_id")
     private SubCategory subcategory;
+
+
+    // @ManyToOne
+    // private Order order;
 
 
    

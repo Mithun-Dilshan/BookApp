@@ -1,4 +1,4 @@
-package com.ijse.BookApp.controler;
+package com.ijse.bookstore.Controler;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,9 +16,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ijse.bookstore.Enrirty.Category;
+import com.ijse.bookstore.Service.CategoryService;
 
-import com.ijse.BookApp.Entity.Category;
-import com.ijse.BookApp.Service.CategoryService;
+
 
 @RestController
 @CrossOrigin

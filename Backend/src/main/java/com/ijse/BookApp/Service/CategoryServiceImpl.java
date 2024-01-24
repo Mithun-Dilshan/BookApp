@@ -1,4 +1,4 @@
-package com.ijse.BookApp.Service;
+package com.ijse.bookstore.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -7,8 +7,9 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ijse.BookApp.Entity.Category;
-import com.ijse.BookApp.Repositary.CategoryRepositary;
+import com.ijse.bookstore.Enrirty.Category;
+import com.ijse.bookstore.Repositary.CategoryRepositary;
+
 
 @Service
 

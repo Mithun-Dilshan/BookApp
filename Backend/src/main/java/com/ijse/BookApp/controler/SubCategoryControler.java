@@ -1,4 +1,4 @@
-package com.ijse.BookApp.controler;
+package com.ijse.bookstore.Controler;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ijse.bookstore.Enrirty.SubCategory;
+import com.ijse.bookstore.Service.SubCategoryService;
 
 
-import com.ijse.BookApp.Entity.SubCategory;
 
-import com.ijse.BookApp.Service.SubCategoryService;
 
 @RestController
 @CrossOrigin
@@ -59,7 +59,9 @@ public class SubCategoryControler {
             SubCategory newSubCategory = subcategoryService.CreatSubCategory(subcategory);
             return ResponseEntity.status(HttpStatus.CREATED).body(newSubCategory);
         } catch (Exception e) {
+            System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+
           
         }
     }

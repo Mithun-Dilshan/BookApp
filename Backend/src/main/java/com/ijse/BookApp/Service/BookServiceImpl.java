@@ -1,4 +1,4 @@
-package com.ijse.BookApp.Service;
+package com.ijse.bookstore.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -6,8 +6,11 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ijse.BookApp.Entity.Book;
-import com.ijse.BookApp.Repositary.BookRepositary;
+import com.ijse.bookstore.Enrirty.Book;
+import com.ijse.bookstore.Repositary.BookRepositary;
+
+
+
 
 @Service
 
@@ -45,6 +48,8 @@ public class BookServiceImpl implements BookService  {
         existingBook.setAuthor(book.getAuthor());
         existingBook.setPrice(book.getPrice());
         existingBook.setDescription(book.getDescription());
+        existingBook.setCategory(book.getCategory());
+        existingBook.setSubcategory(book.getSubcategory());
       
          
         return bookRepositary.save(existingBook);
@@ -55,6 +60,11 @@ public class BookServiceImpl implements BookService  {
     public void deleteBook(Long id){
         bookRepositary.deleteById(id);
     }
+
+    // @Override
+    // public List<Book> getBooksByCategory(String category) {
+    //     return BookRepositary.findByCategory(category);
+    // }
     
 
     

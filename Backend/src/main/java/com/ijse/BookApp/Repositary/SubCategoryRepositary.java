@@ -1,9 +1,11 @@
-package com.ijse.BookApp.Repositary;
+package com.ijse.bookstore.Repositary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ijse.BookApp.Entity.SubCategory;
+import com.ijse.bookstore.Enrirty.SubCategory;
+
+
 @Repository
 
 
